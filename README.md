@@ -13,12 +13,13 @@ supplied, the external IP will be fetched using icanhazip
 (http://major.io/icanhazip-com-faq/) using curl.
 
 For debugging purposes, docker-enter (https://github.com/jpetazzo/nsenter)
-should be used since this container does not run and SSH daemon.
+should be used since this container does not run an SSH daemon.
 
 Due to the need for the TURN server to open arbitrary ports to the outside
-world and Docker's lack of range-based port mapping, running with host
-networking recommended. This means that only one instance of this container can
-be running on a host at a time, otherwise the network ports cannot be bound.
+world and Docker's lack of range-based port mapping (https://github.com/docker/docker/issues/1834),
+running with host networking is recommended. This means that only one instance
+of this container can be running on a host at a time, otherwise the network ports
+cannot be bound.
 
 ### Usage
 
