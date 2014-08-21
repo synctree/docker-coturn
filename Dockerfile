@@ -14,4 +14,5 @@ RUN apt-get update && \
 
 ADD turnserver.sh /turnserver.sh
 
+EXPOSE 3478 3478/udp
 CMD ["/bin/sh", "/turnserver.sh"]
