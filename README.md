@@ -16,13 +16,10 @@ For debugging purposes, docker-enter (https://github.com/jpetazzo/nsenter)
 should be used since this container does not run an SSH daemon.
 
 Due to the need for the TURN server to open arbitrary ports to the outside
-world and Docker's lack of range-based port mapping (https://github.com/docker/docker/issues/1834),
-running with host networking is recommended. This means that only one instance
-of this container can be running on a host at a time, otherwise the network ports
-cannot be bound.
+world and Docker's lack of range-based port mapping (https://github.com/docker/docker/issues/8899), additional configuration is needed to allow clients to talk to this ports. This can be accomplished in a number of ways, including the use of `iptables` in combination with something like [`docker-gen`](https://github.com/jwilder/docker-gen) or using Docker's host networking (`--net host`) feature. The use of host networking is not recommended due to the many security issues it raises.
 
 ### Usage
 
-To run this container with host networking:
+To run this container:
 
-    $ docker run -d --net host synctree/coturn:latest
+    $ docker run -d synctree/coturn:latest
