@@ -12,7 +12,7 @@ variable to tell coturn its external IP address. If `EXTERNAL_IP` is not
 supplied, the external IP will be fetched using icanhazip
 (http://major.io/icanhazip-com-faq/) using curl.
 
-For debugging purposes, docker-enter (https://github.com/jpetazzo/nsenter)
+For debugging purposes, [`docker exec`](https://docs.docker.com/reference/commandline/cli/#exec)
 should be used since this container does not run an SSH daemon.
 
 Due to the need for the TURN server to open arbitrary ports to the outside
