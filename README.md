@@ -16,7 +16,7 @@ For debugging purposes, [`docker exec`](https://docs.docker.com/reference/comman
 should be used since this container does not run an SSH daemon.
 
 Due to the need for the TURN server to open arbitrary ports to the outside
-world and Docker's lack of range-based port mapping (https://github.com/docker/docker/issues/8899), additional configuration is needed to allow clients to talk to this ports. This can be accomplished in a number of ways, including the use of `iptables` in combination with something like [`docker-gen`](https://github.com/jwilder/docker-gen) or using Docker's host networking (`--net host`) feature. The use of host networking is not recommended due to the many security issues it raises.
+world and Docker's lack of range-based port mapping (https://github.com/docker/docker/issues/8899), additional configuration is needed to allow clients to talk to this service. This can be accomplished in a number of ways, including the use of `iptables` in combination with something like [`docker-gen`](https://github.com/jwilder/docker-gen) or using Docker's host networking (`--net host`) feature. The use of host networking is not recommended due to the many security issues it raises.
 
 ### Usage
 
